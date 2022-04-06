@@ -32,7 +32,7 @@
             haben - wie z.B. Geld für Lebensmittel, Krankenversicherung und Unterkunft, müssen Sie sich bei uns registrieren. 
         </p>
 
-        <h3>Was muss ich tun?</h3>
+        <h2>Was muss ich tun?</h2>
 
         <div>
           <ol>
@@ -51,8 +51,8 @@
         <Terminvergabe></Terminvergabe>
         
 
-        <h3>Nähere Informationen zu Leistungen,  Ansprechpartner*innen...</h3>
-        <a href="https://www.flensburg.de/Aktuelles/Ukraine-Portal/Ukrainer-innen-Neu-in-Flensburg/Leistungen-beantragen-/Asylbewerberleistungsgesetz.php?object=tx,2306.2&ModID=10&FID=2306.1502.1&NavID=2306.1402&La=1&ort=2306.1">
+        <h2>Nähere Informationen zu Leistungen,  Ansprechpartner*innen...</h2>
+        <a href="https://www.flensburg.de/Aktuelles/Ukraine-Portal/Ukrainer-innen-Neu-in-Flensburg/Leistungen-beantragen-/Asylbewerberleistungsgesetz.php?object=tx,2306.2&ModID=10&FID=2306.1502.1&NavID=2306.1402&La=1&ort=2306.1" target="_blank">
             Asylbewerberleistungsgesetz
         </a>
 
@@ -68,7 +68,7 @@
 import LanguageTab from '~~/components/LanguageTab.vue'
 import { useLanguageStore } from '@/stores/language'
 import OnlineEmail from '~~/components/OnlineEmail.vue'
-import Terminvergabe from '~~/components/Terminvergabe.vue'
+import Terminvergabe from '~~/components/OnlineEmail.vue'
 definePageMeta({
   layout: 'custom',
 })
