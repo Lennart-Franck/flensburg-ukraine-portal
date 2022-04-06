@@ -2,9 +2,7 @@
   <div>
     <div class="flex flex-row justify-between p-4">
       <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
+        <BackButton />
       </div>
       <div>
         <h3 class="text-3xl font-semibold">Medizinische Hilfe</h3>
@@ -18,16 +16,16 @@
     <LanguageTab></LanguageTab>
 
     <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
+      <div>
         <!--Navigation-->
-        <h6>Navigation</h6>
+        <PageNavigation :links="pageLinks"></PageNavigation>
       </div>
       <!-- Content Deutsch-->
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'"
       >
-        <h3>Akuter Notfall</h3>
+        <h3 id="notfall">Akuter Notfall</h3>
 
         <p>
           Eine akute Notfallvorsorge ist durch die zwei Krankenhäuser gesichert
@@ -88,7 +86,7 @@
           </ul>
         </div>
 
-        <h3>Frühe Hilfen</h3>
+        <h3 id="hilfen">Frühe Hilfen</h3>
 
         <p>
           "Schutzengel" bietet Treffpunkte mit Aktionen für Familien und Kinder.
@@ -127,7 +125,18 @@ export default defineComponent({
   setup() {
     const store = useLanguageStore()
 
-    return { store }
+    const pageLinks = [
+      {
+        name: 'Akuter Notfall',
+        id: 'notfall',
+      },
+      {
+        name: 'Psychische Gesundheit',
+        id: 'hilfen',
+      },
+    ]
+
+    return { store, pageLinks }
   },
 })
 </script>
