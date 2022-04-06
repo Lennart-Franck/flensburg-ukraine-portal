@@ -1,30 +1,27 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
+    <div class="flex flex-row justify-between p-4 items-center">
+      <div class="">
         <BackButton />
       </div>
-      <div>
+      <div class="text-center">
         <h3 class="text-3xl font-semibold">Medizinische Hilfe</h3>
       </div>
-      <div>
+      <div class="">
         <!--Icons-->
-        <h5>Icons hier</h5>
+        <PageIcons />
       </div>
     </div>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div>
+    <div class="grid grid-flow-col auto-cols-auto py-8 px-2 gap-4">
+      <div class="col-auto">
         <!--Navigation-->
         <PageNavigation :links="pageLinks"></PageNavigation>
       </div>
       <!-- Content Deutsch-->
-      <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'"
-      >
+      <article class="prose max-w-none" v-if="store.language == 'deutsch'">
         <h3 id="notfall">Akuter Notfall</h3>
 
         <p>
@@ -108,9 +105,23 @@
           www.schutzengel-flensburg.de
         </p>
       </article>
-      <div class="">
+      <div class="col-auto">
         <!-- Quick Information -->
-        <h6>Quick Information</h6>
+        <QuickInformation>
+          <p>
+            Asylbewerberleistungsgesetz
+            <br />
+            Schleswiger Straße 66
+            <br />
+            24941 Flensburg
+            <br />
+          </p>
+          <p>
+            Telefon:0461 85-4527
+            <br />
+            E-Mail: einwanderungsbuero@flensburg
+          </p>
+        </QuickInformation>
       </div>
     </div>
   </div>
@@ -118,13 +129,13 @@
 <script>
 import LanguageTab from '~~/components/LanguageTab.vue'
 import { useLanguageStore } from '@/stores/language'
+import QuickInformation1 from '~~/components/QuickInformation.vue'
 definePageMeta({
   layout: 'custom',
 })
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
     const pageLinks = [
       {
         name: 'Akuter Notfall',
@@ -135,9 +146,9 @@ export default defineComponent({
         id: 'hilfen',
       },
     ]
-
     return { store, pageLinks }
   },
+  components: { QuickInformation1 },
 })
 </script>
 <style lang=""></style>

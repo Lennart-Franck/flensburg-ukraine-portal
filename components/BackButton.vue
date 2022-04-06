@@ -1,6 +1,9 @@
 <template>
   <div>
-    <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
+    <button
+      @click="$router.push('/')"
+      class="btn btn-sm btn-ghost text-gray-600"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"

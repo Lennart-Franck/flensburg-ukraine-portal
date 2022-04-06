@@ -1,25 +1,14 @@
 <template>
-  <div>
-    <div class="sticky top-16">
-      <h2 class="uppercase text-black font-h2 text-lg lg:mt-16 tracking-wider">
-        Table of contents
-      </h2>
+  <div class="sticky top-16 mx-4">
+    <div
+      class="outline rounded-md outline-gray-200 outline-1 prose prose-a:font-normal prose-sm p-4"
+    >
+      <h4>Navigation</h4>
       <nav class="mt-4">
-        <ul>
-          <li
-            :class="{
-              'pl-4': link.depth === 3,
-            }"
-            class="toc-list"
-            v-for="link of article.toc"
-            :key="link.id"
-          >
-            <a
-              role="button"
-              class="transition-colors duration-75 text-base mb-2 block"
-              :href="`#${link.id}`"
-            >
-              {{ link.text }}
+        <ul class="">
+          <li v-for="link of links" :key="link.id">
+            <a role="button" :href="`#${link.id}`">
+              {{ link.name }}
             </a>
           </li>
         </ul>
