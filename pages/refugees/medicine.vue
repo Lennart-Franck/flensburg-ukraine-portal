@@ -22,8 +22,11 @@
         <!--Navigation-->
         <h6>Navigation</h6>
       </div>
-      <article class="col-span-4 prose max-w-none">
-        <!-- Content -->
+      <!-- Content Deutsch-->
+      <article
+        class="col-span-4 prose max-w-none"
+        v-if="store.language == 'deutsch'"
+      >
         <h3>Akuter Notfall</h3>
 
         <p>
@@ -116,8 +119,16 @@
 </template>
 <script>
 import LanguageTab from '~~/components/LanguageTab.vue'
+import { useLanguageStore } from '@/stores/language'
 definePageMeta({
   layout: 'custom',
+})
+export default defineComponent({
+  setup() {
+    const store = useLanguageStore()
+
+    return { store }
+  },
 })
 </script>
 <style lang=""></style>

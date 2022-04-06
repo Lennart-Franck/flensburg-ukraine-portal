@@ -4,9 +4,9 @@
       <!--Tab Bar -->
       <div class="tabs">
         <a
-          @click="changeLanguage('deutsch')"
+          @click="store.changeLanguage('deutsch')"
           :class="
-            language === 'deutsch'
+            store.language == 'deutsch'
               ? 'tab tab-bordered tab-active'
               : 'tab tab-bordered'
           "
@@ -14,9 +14,9 @@
           Deutsch
         </a>
         <a
-          @click="changeLanguage('englisch')"
+          @click="store.changeLanguage('englisch')"
           :class="
-            language === 'englisch'
+            store.language == 'englisch'
               ? 'tab tab-bordered tab-active'
               : 'tab tab-bordered'
           "
@@ -24,9 +24,9 @@
           Englisch
         </a>
         <a
-          @click="changeLanguage('ukrainisch')"
+          @click="store.changeLanguage('ukrainisch')"
           :class="
-            language === 'ukrainisch'
+            store.language == 'ukrainisch'
               ? 'tab tab-bordered tab-active'
               : 'tab tab-bordered'
           "
@@ -40,18 +40,12 @@
 <script>
 import { useLanguageStore } from '@/stores/language'
 
-export default {
+export default defineComponent({
   setup() {
-    const store = useLanguageStore
-    const language = store.language
+    const store = useLanguageStore()
 
-    return { language, store }
+    return { store }
   },
-  methods: {
-    changeLanguage(newLanguage) {
-      this.store.change(newLanguage)
-    },
-  },
-}
+})
 </script>
-<style lang=""></style>
+<style></style>
