@@ -1,8 +1,11 @@
 <template>
   <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <AppHeader />
+    <AppContainer>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </AppContainer>
   </div>
 </template>
 
