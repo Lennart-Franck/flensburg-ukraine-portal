@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 m-8">
-      <BaseButton>Unterkunft anbieten</BaseButton>
-      <BaseButton to="/refugees/medicine">Sachspenden</BaseButton>
-      <BaseButton>Deutsche in der Ukraine</BaseButton>
+      <BaseButton onclick="window.open('https://pdf.form-solutions.net/administrationCenter/Form-Solutions/01001000-0001/consent?redirectId=0a77f17a-f399-4d0e-a17b-db9ffea6eab1&releaseCacheId=5ed2cbeb-e900-46ac-baac-910f84cd74f3', '_blank')">Unterkunft anbieten</BaseButton>
+      <BaseButton to="/volunteers/helfen">Helfen & Informieren</BaseButton>
+      <BaseButton to="/volunteers/deutscheUkraine">Deutsche in der Ukraine</BaseButton>
       <SecondaryButton>Weiter Informationen</SecondaryButton>
     </div>
   </div>
