@@ -1,28 +1,12 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Deutsch lernen</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Deutsch lernen
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
@@ -32,7 +16,7 @@
             von denen einige hier vorgestellt werden.
         </p>
 
-        <h2>Kurs-Arten und Online-Suche</h2>
+        <h2 id="kurse">Kurs-Arten und Online-Suche</h2>
     
         <div class="overflow-x-auto">
             <table class="table table-zebra w-full">
@@ -82,7 +66,7 @@
             </a>
         </p>
 
-        <h2>Kostenlose Online-Angebote</h2>
+        <h2 id="onlineAngebote">Kostenlose Online-Angebote</h2>
         <ul>
             <li>
                 <a href="https://deutsch.vhs-lernportal.de/wws/9.php#/wws/deutsch.php?sid=31282685853543903058615741574160S27a1d940" target="_blank">
@@ -106,18 +90,58 @@
             </li>
         </ul>
 
-        <h2>Netzwerk Sprachförderung für erwachsene Zugewanderte</h2>
+        <h2 id="netzwerk">Netzwerk Sprachförderung für erwachsene Zugewanderte</h2>
         <p>Das Netzwerktreffen "Sprachförderung für erwachsene Zugewanderte" ist eine Zusammenarbeit mit dem Kreis Schleswig-Flensburg. Das Netzwerk vereint viele Akteure zum Spracherwerb für Migrant*innen und Geflüchtete, wie z.B. Sprachkursträger, Migrationsberatungen, 
             Ehrenamtler weitere Behörden wie das Jobcenter und die Agentur für Arbeit. 
             Das Netzwerk trifft sich drei bis viermal im Jahr. 
         </p>
 
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+      <template v-slot:information>
+        <p><b>Kontakt</b></p>
+        <p>
+          Melanie Gdanitz
+          <br />
+          Stabsstelle Integration
+          <br />
+          Koordinierungsstelle für Integration
+          <br />
+          <br />
+          Rathausplatz 1
+          <br/>
+          24937 Flensburg
+        </p>
+        <p>
+          Telefon: 0461 85-4554
+          <br/>
+          Raum: 1303
+          <br/>
+          <a href="mailto:gdanitz.melanie@flensburg.de">
+            gdanitz.melanie@flensburg.de
+          </a>
+        </p>
+
+        <p>
+          <p><b>Dokumente</b></p>
+          <br/>
+          <a href="https://www.flensburg.de/loadDocument.phtml?ObjSvrID=2306&ObjID=13267&ObjLa=1&Ext=PDF" target="_blank">
+            Sprachschulen in Flensburg (Stand: 01/2022) (PDF, 580 kB)
+          </a>
+          <br/>
+          <br/>
+          <a href="https://www.flensburg.de/loadDocument.phtml?ObjSvrID=2306&ObjID=11405&ObjLa=1&Ext=PDF" target="_blank">
+            Kostenlose Angebote für Migrant*innen und Geflüchtete: Sprache und Treffen (PDF, 556 kB, (Stand: 02/2022))
+          </a>
+        </p>
+
+        <p>
+          <p><b>Links</b></p>
+          <a href="https://www.deutschkurs-sh.de/allgemeine-bedarfsmeldung/" target="_blank">
+             Bedarfsmeldung (EOK/STAFF)
+          </a>
+        </p>
+      </template>
+    </PageContent>
   </div>
 </template>
 <script>
@@ -131,8 +155,25 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Kurs-Arten und Online-Suche',
+                              id: 'kurse',
+                            },
+                            {
+                              name: 'Kostenlose Angebote für Sprache in Flensburg',
+                              id: 'angebote',
+                            },
+                            {
+                              name: 'Kostenlose Online-Angebote',
+                              id: 'onlineAngebote',
+                            },
+                            {
+                              name: 'Netzwerk Sprachförderung für erwachsene Zugewanderte',
+                              id: 'netzwerk',
+                            },
+                          ]
+    return { store, pageLinks }
   },
 })
 </script>

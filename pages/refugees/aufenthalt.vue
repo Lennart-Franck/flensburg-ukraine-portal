@@ -1,34 +1,19 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Ihr Aufenthalt in Flensburg</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
-
+    <PageHeader v-if="store.language == 'deutsch'">
+      Ihr Aufenthalt in Flensburg
+    </PageHeader>
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
-      <article
+
+
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
+       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
         <p>Stand: 01.04.2022:</p>
 
-        <h2>Was gilt für aus der Ukraine Geflüchtete?*</h2>
+        <h2 id="wasGilt">Was gilt für aus der Ukraine Geflüchtete?*</h2>
         <div>
           <ul>
             <li>
@@ -54,7 +39,7 @@
           </ul>
         </div>
 
-        <h2>*Für wen gilt das? (Personengruppen)</h2>
+        <h2 id="fürWen">*Für wen gilt das? (Personengruppen)</h2>
         <p>Personengruppen, die <b>seit dem 24. Februar 2022</b> als Folge der militärischen Invasion durch Russland 
             aus der Ukraine vertrieben worden sind (Art. 2 Nr. 1):</p>
 
@@ -92,30 +77,77 @@
         <Terminvergabe></Terminvergabe>
 
         
-        <h2>Beschluss des Europäischen Rats</h2>
+        <h2 id="beschluss">Beschluss des Europäischen Rats</h2>
         <p>Der europäische Rat hat am 4. März 2022 den erforderlichen Beschluss zur Feststellung des Bestehens eines Massenzustroms von Vertriebenen getroffen (nach Artikel 5 Abs. 1 der RL 2001/55/EG des Rates vom 20. Juli 2001 
             über Mindestnormen für die Gewährung vorübergehenden Schutzes).</p>
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+
+      <template v-slot:information>
+        <p>
+          Ausländerrechtliche Angelegenheiten
+          <br />
+          Schleswiger Straße 66
+          <br />
+          24941 Flensburg
+          <br />
+        </p>
+        <p>
+          Telefon: 0461 85-4423
+          <br />
+          <a href="mailto:einwanderungsbuero@flensburg.de">
+            einwanderungsbuero@flensburg.de
+          </a>
+        </p>
+
+        <p>
+          Öffnungszeiten
+          <br/>
+          Montag bis Freitag: 08:30 bis 12:00
+          <br/>
+          Montag bis Mittwoch: 13:30 bis 15:30
+          <br/>
+          Donnerstag: 14:00 bis 17:00
+        </p>
+      </template>
+    </PageContent>
+    
   </div>
 </template>
 <script>
 import LanguageTab from '~~/components/LanguageTab.vue'
 import { useLanguageStore } from '@/stores/language'
+import PageContent from '~~/components/PageContent.vue'
 definePageMeta({
   layout: 'custom',
 })
 export default defineComponent({
-  setup() {
-    const store = useLanguageStore()
-
-    return { store }
-  },
+    setup() {
+        const store = useLanguageStore();
+        const pageLinks = [
+                            {
+                              name: 'Was gilt für aus der Ukraine Geflüchtete?*',
+                              id: 'wasGilt',
+                            },
+                            {
+                              name: '*Für wen gilt das? (Personengruppen)',
+                              id: 'fürWen',
+                            },
+                            {
+                              name: 'Online per E-Mail melden',
+                              id: 'Email',
+                            },
+                            {
+                              name: 'Terminvergabe',
+                              id: 'termine',
+                            },
+                            {
+                              name: 'Beschluss des Europäischen Rats',
+                              id: 'beschluss',
+                            },
+                          ]
+        return { store, pageLinks };
+    },
+    components: { PageContent }
 })
 </script>
 <style lang=""></style>

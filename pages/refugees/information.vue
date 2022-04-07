@@ -1,33 +1,17 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Weitere Informationen</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Weitere Informationen
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
-       <h2>Landesinnenministerium SH</h2>
+       <h2 id="andesinnenministerium">Landesinnenministerium SH</h2>
         <a href="https://www.schleswig-holstein.de/DE/Landesregierung/Themen/InneresSicherheit/Ukraine/_documents/faq_deutsch.html" target="_blank">
            Häufig gestellte Fragen für Betroffene der Ukraine-Krise
         </a>
@@ -55,12 +39,12 @@
             </ul>
         </div>
 
-        <h2>Schleswig-Holsteinischer Landtag</h2>
+        <h2 id="landtag">Schleswig-Holsteinischer Landtag</h2>
         <a href="https://www.bmi.bund.de/SharedDocs/faqs/DE/themen/ministerium/ukraine-krieg/faq-ukraine-artikel.html" target="_blank">
            Der Beauftragte für Flüchtlings-, Asyl- und Zuwanderungsfragen: Hinweise zur Unterstützung von Geflüchteten aus der Ukraine
         </a>
 
-        <h2>Bundesinnenministerium</h2>
+        <h2 id="bundesinnenministerium">Bundesinnenministerium</h2>
         <a href="https://www.landtag.ltsh.de/beauftragte/fb/ukraine/" target="_blank">
            Bundesinnenministerium: Fragen und Antworten zur Einreise aus der Ukraine.
         </a>
@@ -70,22 +54,17 @@
         </a>
         </p>
 
-        <h2>Bundesamt für Migration und Flüchtlinge </h2>
+        <h2 id="bundesamt">Bundesamt für Migration und Flüchtlinge </h2>
         <a href="https://www.bamf.de/DE/Themen/AsylFluechtlingsschutz/ResettlementRelocation/InformationenEinreiseUkraine/informationen-einreise-ukraine-node.html" target="_blank">
            Fragen und Antworten zur Einreise aus der Ukraine und zum Aufenthalt in Deutschland (Stand: 04.03.2022)
         </a>
 
-        <h2>Integrationsbeauftragte</h2>
+        <h2 id="integrationsbeauftragte">Integrationsbeauftragte</h2>
         <a href="https://www.integrationsbeauftragte.de/ib-de/staatsministerin/krieg-in-der-ukraine" target="_blank">
            Fragen und Antworten zur Einreise aus der Ukraine und zum Aufenthalt in Deutschland
         </a>
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+    </PageContent>   
   </div>
 </template>
 <script>
@@ -99,8 +78,29 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Landesinnenministerium SH',
+                              id: 'Landesinnenministerium',
+                            },
+                            {
+                              name: 'Schleswig-Holsteinischer Landtag',
+                              id: 'landtag',
+                            },
+                            {
+                              name: 'Bundesinnenministerium',
+                              id: 'bundesinnenministerium',
+                            },
+                            {
+                              name: 'Bundesamt für Migration und Flüchtlinge',
+                              id: 'bundesamt',
+                            },
+                            {
+                              name: 'Integrationsbeauftragte ',
+                              id: 'integrationsbeauftragte',
+                            },
+                          ]
+    return { store, pageLinks }
   },
 })
 </script>

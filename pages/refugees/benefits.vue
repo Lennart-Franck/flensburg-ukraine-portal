@@ -1,29 +1,13 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Leistungen beantragen</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Leistungen beantragen
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
-      <article
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
+       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
@@ -32,7 +16,7 @@
             haben - wie z.B. Geld für Lebensmittel, Krankenversicherung und Unterkunft, müssen Sie sich bei uns registrieren. 
         </p>
 
-        <h2>Was muss ich tun?</h2>
+        <h2 id="wasTun">Was muss ich tun?</h2>
 
         <div>
           <ol>
@@ -51,17 +35,39 @@
         <Terminvergabe></Terminvergabe>
         
 
-        <h2>Nähere Informationen zu Leistungen,  Ansprechpartner*innen...</h2>
+        <h2 id="info">Nähere Informationen zu Leistungen,  Ansprechpartner*innen...</h2>
         <a href="https://www.flensburg.de/Aktuelles/Ukraine-Portal/Ukrainer-innen-Neu-in-Flensburg/Leistungen-beantragen-/Asylbewerberleistungsgesetz.php?object=tx,2306.2&ModID=10&FID=2306.1502.1&NavID=2306.1402&La=1&ort=2306.1" target="_blank">
             Asylbewerberleistungsgesetz
         </a>
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+      <template v-slot:information>
+        <p>
+          Ausländerrechtliche Angelegenheiten
+          <br />
+          Schleswiger Straße 66
+          <br />
+          24941 Flensburg
+          <br />
+        </p>
+        <p>
+          Telefon: 0461 85-4423
+          <br />
+          <a href="mailto:einwanderungsbuero@flensburg.de">
+            einwanderungsbuero@flensburg.de
+          </a>
+        </p>
+
+        <p>
+          Öffnungszeiten
+          <br/>
+          Montag bis Freitag: 08:30 bis 12:00
+          <br/>
+          Montag bis Mittwoch: 13:30 bis 15:30
+          <br/>
+          Donnerstag: 14:00 bis 17:00
+        </p>
+      </template>
+    </PageContent>
   </div>
 </template>
 <script>
@@ -75,8 +81,25 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Was muss ich tun?',
+                              id: 'wasTun',
+                            },
+                            {
+                              name: 'Online per E-Mail melden',
+                              id: 'Email',
+                            },
+                            {
+                              name: 'Terminvergabe',
+                              id: 'termine',
+                            },
+                            {
+                              name: 'Nähere Informationen zu Leistungen, Ansprechpartner*innen...',
+                              id: 'info',
+                            },
+                          ]
+    return { store, pageLinks }
   },
 })
 </script>

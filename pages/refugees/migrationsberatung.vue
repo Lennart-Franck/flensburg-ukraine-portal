@@ -1,35 +1,18 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Migrationsberatung - Kontakte</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
-
+    <PageHeader v-if="store.language == 'deutsch'">
+      Migrationsberatung - Kontakte
+    </PageHeader>
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
-      <article
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
+        <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
         <p>Es wurden 3 Adressen gefunden</p>
 
-        <div class="overflow-x-auto">
+        <div id="kontakte" class="overflow-x-auto">
             <table class="table table-zebra w-full">
                 <!-- head -->
                 <thead>
@@ -179,13 +162,9 @@
                 </tbody>
             </table>
         </div>
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+    </PageContent>
+
   </div>
 </template>
 <script>
@@ -199,8 +178,13 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Kontakte',
+                              id: 'kontakte',
+                            },
+                          ]
+    return { store, pageLinks}
   },
 })
 </script>
