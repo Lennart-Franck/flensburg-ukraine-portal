@@ -21,13 +21,16 @@
           <LanguageTab />
         </div>
         <div>
-          <ButtonGroup />
+          <ButtonGroupRef />
         </div>
       </div>
       <div class="divider divider-horizontal"></div>
       <div class="bg-white w-1/3 p-4">
         <div class="">
           <div class="text-xl text-center">Informationen für Helfende</div>
+          <div>
+            <ButtonGroupHelp />
+          </div>
         </div>
       </div>
     </div>
