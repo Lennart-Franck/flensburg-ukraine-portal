@@ -6,8 +6,10 @@
       Інформація щодо надання підтримки людям з України у Фленсбурзі
     </div>
 
-    <div class="flex lg:flex-row flex-col mt-4 justify-center">
-      <div class="bg-white max-w-1/3 p-4">
+    <div
+      class="flex lg:flex-row flex-col mt-4 justify-center items-center lg:items-start"
+    >
+      <div class="bg-white max-w-lg md:max-w-md sm:max-w-sm p-4">
         <div class="">
           <div class="text-xl text-center">
             Informationen für Flüchtende
@@ -24,8 +26,8 @@
           <ButtonGroupRef />
         </div>
       </div>
-      <div class="divider divider-vertical md:divider-horizontal"></div>
-      <div class="bg-white max-w-1/3 shrink p-4">
+      <div class="divider divider-vertical lg:divider-horizontal"></div>
+      <div class="bg-white max-w-lg md:max-w-md sm:max-w-sm shrink p-4">
         <div class="">
           <div class="text-xl text-center">Informationen für Helfende</div>
           <div>

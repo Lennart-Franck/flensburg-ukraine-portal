@@ -1,6 +1,5 @@
 <template>
   <div>
-    <AppHeader />
     <AppContainer>
       <NuxtLayout>
         <NuxtPage />
@@ -9,4 +8,3 @@
     </AppContainer>
   </div>
 </template>
-

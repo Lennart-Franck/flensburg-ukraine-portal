@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-16 mx-4">
+  <div class="sticky top-16 mx-4 w-48">
     <div
       class="outline rounded-md outline-gray-200 outline-1 prose prose-a:font-normal prose-sm p-4"
     >
