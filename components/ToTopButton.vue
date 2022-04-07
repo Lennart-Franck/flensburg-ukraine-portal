@@ -1,7 +1,7 @@
 <template>
   <button
     id="pagetop"
-    class="p-3 bg-primary text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0active:shadow-lg transition duration-150 ease-in-out bottom-5 right-36 fixed"
+    class="p-3 bg-primary text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5 fixed"
     v-show="scY > 300"
     @click="toTop"
   >

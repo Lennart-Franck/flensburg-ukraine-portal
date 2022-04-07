@@ -1,17 +1,20 @@
 <template>
   <div class="max-w-7xl mx-auto">
-    <div class="text-center text-md md:text-lg py-4">
+    <div class="text-center text-2xl font-semibold md:text-3xl p-4">
+      Ukraine Portal
+    </div>
+    <div class="text-center text-sm md:text-lg">
       Informationen zur Unterstützung von Menschen aus der Ukraine in Flensburg
       <br />
       Інформація щодо надання підтримки людям з України у Фленсбурзі
     </div>
 
     <div
-      class="flex lg:flex-row flex-col mt-4 justify-center items-center lg:items-start"
+      class="md:flex lg:flex-row flex-col mt-4 justify-center items-center lg:items-start hidden"
     >
       <div class="bg-white max-w-lg md:max-w-md sm:max-w-sm p-4">
         <div class="">
-          <div class="text-xl text-center">
+          <div class="text-xl text-center font-medium">
             Informationen für Flüchtende
             <br />
             Information for refugees
@@ -29,7 +32,51 @@
       <div class="divider divider-vertical lg:divider-horizontal"></div>
       <div class="bg-white max-w-lg md:max-w-md sm:max-w-sm shrink p-4">
         <div class="">
-          <div class="text-xl text-center">Informationen für Helfende</div>
+          <div class="text-xl text-center font-medium">
+            Informationen für Helfende
+          </div>
+          <div>
+            <ButtonGroupHelp />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block md:hidden">
+      <div
+        tabindex="0"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-md mx-auto mt-4"
+      >
+        <input type="checkbox" class="peer" />
+        <div class="collapse-title text-xl font-medium">
+          <div class="text-lg text-left">
+            Informationen für Flüchtende
+            <br />
+            Information for refugees
+            <br />
+            Інформація для біженців
+          </div>
+        </div>
+        <div class="collapse-content">
+          <div class="mb-4">
+            <LanguageTab />
+          </div>
+
+          <div>
+            <ButtonGroupRef />
+          </div>
+        </div>
+      </div>
+
+      <div
+        tabindex="0"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-md mx-auto mt-4"
+      >
+        <input type="checkbox" class="peer" />
+        <div class="collapse-title text-xl font-medium">
+          <div class="text-lg text-left">Informationen für Helfende</div>
+        </div>
+        <div class="collapse-content">
           <div>
             <ButtonGroupHelp />
           </div>

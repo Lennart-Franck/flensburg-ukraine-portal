@@ -15,9 +15,11 @@
           d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
         />
       </svg>
-      <div v-if="store.language == 'deutsch'">Zur Startseite</div>
-      <div v-if="store.language == 'englisch'">Back to Start</div>
-      <div v-if="store.language == 'ukrainisch'">На домашню сторінку</div>
+      <div class="hidden md:block">
+        <div v-if="store.language == 'deutsch'">Zur Startseite</div>
+        <div v-if="store.language == 'englisch'">Back to Start</div>
+        <div v-if="store.language == 'ukrainisch'">На домашню сторінку</div>
+      </div>
     </button>
   </div>
 </template>

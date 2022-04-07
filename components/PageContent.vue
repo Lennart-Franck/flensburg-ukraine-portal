@@ -6,7 +6,7 @@
         <PageNavigation :links="pageLinks"></PageNavigation>
       </div>
       <!-- Content Deutsch-->
-      <article class="prose max-w-none">
+      <article class="prose prose-sm md:prose-base max-w-none">
         <slot></slot>
       </article>
       <div class="col-auto hidden lg:block">

@@ -4,8 +4,8 @@
       <div class="">
         <BackButton />
       </div>
-      <div class="text-center">
-        <h3 class="text-3xl font-semibold"><slot /></h3>
+      <div class="text-center md:-ml-20 ml-0">
+        <h3 class="text-xl md:text-3xl font-semibold"><slot /></h3>
       </div>
       <div class="">
         <!--Icons-->
