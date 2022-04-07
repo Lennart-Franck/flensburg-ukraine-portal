@@ -4,8 +4,6 @@
       Ehrenamtliche Helfer:in
     </PageHeader>
 
-    <LanguageTab></LanguageTab>
-
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
        <article
         class="col-span-4 prose max-w-none"
@@ -119,6 +117,7 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
+    store.changeLanguage("deutsch")
     const pageLinks = [
                             {
                               name: 'Flensburg hilft',
