@@ -1,35 +1,19 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Kleidung, Dolmetscher...</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Kleidung, Dolmetscher... (kostenfrei)
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
         <h2>Kleidung, Dolmetscher... (kostenfrei)</h2>
 
-        <h3>Kleiderspenden</h3>
+        <h3 id="kleiderspenden">Kleiderspenden</h3>
 
         <div>
             <ul>
@@ -46,7 +30,7 @@
             </ul>
         </div>
 
-        <h3>Hygieneartikel und weitere Sachspenden</h3>
+        <h3 id="hygieneartikel">Hygieneartikel und weitere Sachspenden</h3>
 
         <div>
             <ul>
@@ -63,7 +47,7 @@
             </ul>
         </div>
 
-        <h3>Dolmetscher*innen</h3>
+        <h3 id="dolmetscher*innen">Dolmetscher*innen</h3>
 
         <div>
             <ul>
@@ -92,7 +76,7 @@
             </ul>
         </div>
 
-        <h3>Fahrdienste</h3>
+        <h3 id="fahrdienste">Fahrdienste</h3>
 
         <div>
             <ul>
@@ -108,13 +92,34 @@
                 </li>
             </ul>
         </div>
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+
+      <template v-slot:information>
+        <p>
+          <b>Flüchtlingshilfe  Flensburg e.V.</b>
+          <br />
+          Schiffbrücke 45
+          <br />
+          24939 Flensburg
+          <br />
+        </p>
+        <p>
+          Telefon: 0461 - 407 973 82
+          <br />
+          <a href="mailto:info@fluechtlingshilfe-flensburg.de">
+            info@fluechtlingshilfe-flensburg.de
+          </a>
+          <br/>
+          Web: 
+          <a href="https://www.fluechtlingshilfe-flensburg.de/" target="_blank">
+            https://www.fluechtlingshilfe-flensburg.de/
+          </a>
+        </p>
+        
+
+      </template>
+    </PageContent>
+    
   </div>
 </template>
 <script>
@@ -128,8 +133,25 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Kleiderspenden',
+                              id: 'kleiderspenden',
+                            },
+                            {
+                              name: 'Hygieneartikel und weitere Sachspenden',
+                              id: 'hygieneartikel',
+                            },
+                            {
+                              name: 'Dolmetscher*innen',
+                              id: 'dolmetscher*innen',
+                            },
+                            {
+                              name: 'Fahrdienste',
+                              id: 'fahrdienste',
+                            },
+                          ]
+    return { store, pageLinks }
   },
 })
 </script>

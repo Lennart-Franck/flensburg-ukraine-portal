@@ -1,33 +1,17 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Einreise mit Heim- und Haustieren (Ukraine)</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Einreise mit Heim- und Haustieren (Ukraine)
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
-      <article
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
+     <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
-        <h2>Registrieren Sie Ihr Heim-/Haustier!</h2>
+        <h2 id="registrieren">Registrieren Sie Ihr Heim-/Haustier!</h2>
         <p>
             Im Moment werden keine Papiere von Tieren an der Grenze kontrolliert. 
             Daher ist es wichtig, dass Sie Ihre Haus- und Heimtiere registrieren.
@@ -75,7 +59,7 @@
              oder 0049 461 85 2777 - Vielen Dank!
         </p>
 
-        <h2>Besondere Anforderungen für Hund, Katze und Frettchen</h2>
+        <h2 id="anforderungen">Besondere Anforderungen für Hund, Katze und Frettchen</h2>
         <h3>Tollwut-Risiko</h3>
         <p>Die Ukraine ist ein Risikoland für <b>Tollwut</b>. Hunde, Katzen und Frettchen können Tollwut 
             in sich tragen und müssen daher besondere Anforderungen erfüllen:
@@ -95,7 +79,7 @@
             </ul>
         </div>
 
-        <h2>Ankunft in Flensburg und Zeit nach der Impfung</h2>
+        <h2 id="ankunft">Ankunft in Flensburg und Zeit nach der Impfung</h2>
 
         <p>
           <b>Nach Ihrer Ankunft in Flensburg</b> ist es wichtig, dass Sie Ihr Haustier (Hund, Katze, Frettchen) 
@@ -117,7 +101,7 @@
             </ul>
         </div>
 
-        <h2>Rechtsgrundlagen</h2>
+        <h2 id="rechtsgrundlagen">Rechtsgrundlagen</h2>
         <p>Verordnung (EU) 2016/429 des Europäischen Parlaments und des Rates vom 9. März 2016 zu Tierseuchen 
             und zur Änderung und Aufhebung einiger Rechtsakte im Bereich der Tiergesundheit 
             („Tiergesundheitsrecht“) (ABl. L 84, 31.3.2016, S. 1–208) in der derzeit geltenden Fassung VERORDNUNG (EU) 
@@ -125,13 +109,40 @@
             von Heimtieren zu anderen als Handelszwecken und zur Aufhebung der Verordnung (EG) Nr. 998/2003 
             (ABl. L 178 vom 28.6.2013, S. 1) 
         </p>
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+
+      <template v-slot:information>
+        <p><b>Veterinärdienste</b></p>
+        <p>
+          Rathausplatz 1
+          <br />
+          24937 Flensburg
+        </p>
+        <p>
+          Telefon: 0461 85-2912
+          <br/>
+          <a href="mailto:veterinaer@flensburg.de">
+             veterinaer@flensburg.de
+          </a>
+        </p>
+
+        <p>
+          <p><b>Öffnungszeiten</b></p>
+          <br/>
+          Nur nach Terminvereinbarung.
+        </p>
+
+        <p>
+          <p><b>Links</b></p>
+          <a href="https://pdf.form-solutions.net/metaform/Form-Solutions/sid/assistant/6230984a20afae743ddc25a4" target="_blank">
+             Tiere registrieren (Online-Dienst)
+          </a>
+        </p>
+      </template>
+    </PageContent>
+
+
+    
   </div>
 </template>
 <script>
@@ -145,8 +156,25 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Registrieren Sie Ihr Heim-/Haustier!',
+                              id: 'registrieren',
+                            },
+                            {
+                              name: 'Besondere Anforderungen für Hund, Katze und Frettchen',
+                              id: 'anforderungen',
+                            },
+                            {
+                              name: 'Ankunft in Flensburg und Zeit nach der Impfung',
+                              id: 'ankunft',
+                            },
+                            {
+                              name: 'Rechtsgrundlagen',
+                              id: 'rechtsgrundlagen',
+                            },
+                          ]
+    return { store, pageLinks }
   },
 })
 </script>

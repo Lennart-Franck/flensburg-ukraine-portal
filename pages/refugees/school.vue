@@ -1,33 +1,17 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Informationen für den Schulbesuch</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Informationen für den Schulbesuch
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
+    <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
-        <h2>Wann muss mein Kind in die Schule?</h2>
+        <h2 id="wannSchule">Wann muss mein Kind in die Schule?</h2>
 
         <p>In Deutschland müssen Kinder von 6 - 16 Jahren in die Schule gehen. 
             Aber auch danach können Kinder die Schule weiter besuchen.</p>
@@ -57,7 +41,7 @@
             </ul>
         </div>
 
-        <h2>Mein Kind kann noch kein Deutsch – Kann es trotzdem die Schule besuchen?</h2>
+        <h2 id="keinDeutsch">Mein Kind kann noch kein Deutsch – Kann es trotzdem die Schule besuchen?</h2>
 
         <p>
             In den meisten Schulen gibt es DaZ-Klassen (DaZ = Deutsch als Zweitsprache). Wenn Kinder wenig oder kein 
@@ -65,7 +49,7 @@
             etwas Deutsch gelernt haben, besuchen sie immer mehr den regulären Unterricht.
         </p>
 
-        <h2>Offener Ganztag und Hort</h2>
+        <h2 id="ganztag">Offener Ganztag und Hort</h2>
 
         <p>
             Offener Ganztag und Hort bedeutet, dass Kinder nach dem Unterricht in der Schule bleiben können. 
@@ -76,7 +60,7 @@
             weiterführenden Schulen.
         </p>
 
-        <h2>Hinweis zur Masernimpfung</h2>
+        <h2 id="masernimpfung">Hinweis zur Masernimpfung</h2>
         <p>
             Wenn Kinder in die Schule gehen, sollten sie gegen Masern geimpft sein. Für eine 
             Betreuung in der KiTa (Kindertagesstätte) ist dies Pflicht. Auch für den offenen Ganztag 
@@ -84,7 +68,7 @@
             eigenes Kind und andere Kinder.
         </p>
 
-        <h2>Wie kann ich mein Kind in der Schule anmelden?</h2>
+        <h2 id="anmelden">Wie kann ich mein Kind in der Schule anmelden?</h2>
         <p>
             Eltern können aussuchen, welche Schule ihr Kind besuchen soll. Sie können z.B. zur 
             Schule gehen, die bei Ihnen in der Nähe ist. Dort kann die Schulleitung Sie 
@@ -93,7 +77,7 @@
         </p>
 
       
-        <h2>Welche Schulen gibt es in Flensburg?</h2>
+        <h2 id="schulen">Welche Schulen gibt es in Flensburg?</h2>
         <p>
             In Flensburg gibt es mehrere Grundschulen und weiterführende Schulen.
             Eine Liste aller Schulen gibt es unter:
@@ -101,14 +85,29 @@
                     https://www.flensburg.de/Leben-Soziales/Kinderbetreuung-Schulen/
             </a>
         </p>
-        
-
       </article>
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+
+      <template v-slot:information>
+        <p>
+          <p><b>Dokumente</b></p>
+          <br/>
+          <a href="https://www.flensburg.de/loadDocument.phtml?ObjSvrID=2306&ObjID=13708&ObjLa=1&Ext=PDF" target="_blank">
+             Flyer: Schulbesuch (Deutsch, Українська, English, русский) (PDF, 652 kB)
+          </a>
+          <br/>
+          <br/>
+          <a href="https://www.flensburg.de/loadDocument.phtml?ObjSvrID=2306&ObjID=13709&ObjLa=1&Ext=DOCX" target="_blank">
+            Лист прийому учнів (Schüleraufnahmebogen ukrainische Version) (DOCX, 30 kB)
+          </a>
+          <br/>
+          <br/>
+          <a href="https://www.flensburg.de/loadDocument.phtml?ObjSvrID=2306&ObjID=13710&ObjLa=1&Ext=DOCX" target="_blank">
+            Schüleraufnahmebogen (deutsche Version) (DOCX, 26 kB)
+          </a>
+        </p>
+      </template>
+    </PageContent>
+
   </div>
 </template>
 <script>
@@ -122,8 +121,33 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinks = [
+                            {
+                              name: 'Wann muss mein Kind in die Schule?',
+                              id: 'wannSchule',
+                            },
+                            {
+                              name: 'Mein Kind kann noch kein Deutsch – Kann es trotzdem die Schule besuchen?',
+                              id: 'keinDeutsch',
+                            },
+                            {
+                              name: 'Offener Ganztag und Hort',
+                              id: 'ganztag',
+                            },
+                            {
+                              name: 'Hinweis zur Masernimpfung:',
+                              id: 'masernimpfung',
+                            },
+                            {
+                              name: 'Wie kann ich mein Kind in der Schule anmelden?',
+                              id: 'anmelden',
+                            },
+                            {
+                              name: 'Welche Schulen gibt es in Flensburg?',
+                              id: 'schulen',
+                            },
+                          ]
+    return { store, pageLinks }
   },
 })
 </script>

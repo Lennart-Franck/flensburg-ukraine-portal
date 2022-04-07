@@ -1,33 +1,23 @@
 <template>
   <div>
-    <div class="flex flex-row justify-between p-4">
-      <div class="text-center">
-        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
-          Zur Startseite
-        </button>
-      </div>
-      <div>
-        <h3 class="text-3xl font-semibold">Notunterkunft</h3>
-      </div>
-      <div>
-        <!--Icons-->
-        <h5>Icons hier</h5>
-      </div>
-    </div>
+    <PageHeader v-if="store.language == 'deutsch'">
+      Notunterkunft
+    </PageHeader>
+    <PageHeader v-if="store.language == 'englisch'">
+      Emergency Accommodation
+    </PageHeader>
+    <PageHeader v-if="store.language == 'ukrainisch'">
+      Місце тимчасового перебування
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
-
-    <div class="grid grid-cols-6 gap-2 py-8 px-2">
-      <div class="">
-        <!--Navigation-->
-        <h6>Navigation</h6>
-      </div>
-      <!-- Content Deutsch-->
+    
+    <PageContent :pageLinks="pageLinksDe" v-if="store.language == 'deutsch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'deutsch'">
 
-        <h3>Kann ich nach Flensburg kommen?</h3>
+        <h3 id="flensburg">Kann ich nach Flensburg kommen?</h3>
 
         <p>
           Momentan wird die Verteilung auf die Kommunen über die Erstaufnahmeeinrichtung des Landesamtes für Zuwanderung und Flüchtlinge (LaZuF) 
@@ -53,7 +43,7 @@
             24539 Neumünster
         </p>
 
-        <h3>Wenn ich bereits in Flensburg bin?</h3>
+        <h3 id="bereitsInFlensburg">Wenn ich bereits in Flensburg bin?</h3>
 
         <p>
           Sie können in einer kostenlosen, städtischen Unterkunft bleiben.
@@ -61,12 +51,13 @@
           Rufen Sie dafür bei dieser Nummer an: <b>0049 170 9061389</b>
         </p>
       </article>
-      <!-- Content englisch-->
+    </PageContent>
+    <PageContent :pageLinks="pageLinksEn" v-if="store.language == 'englisch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'englisch'">
 
-        <h3>Accommodation: where can I stay?</h3>
+        <h3 id="flensburg">Accommodation: where can I stay?</h3>
 
         <p>
           The city provides you with free accommodation.
@@ -74,12 +65,13 @@
           Please call this number for further information: <b>0049 170 9061389</b>
         </p>
       </article>
-      <!-- Content ukrainisch-->
+    </PageContent>
+    <PageContent :pageLinks="pageLinksUk" v-if="store.language == 'ukrainisch'">
       <article
         class="col-span-4 prose max-w-none"
         v-if="store.language == 'ukrainisch'">
 
-        <h3>Місце тимчасового перебування: де я можу зупинитись?</h3>
+        <h3 id="flensburg">Місце тимчасового перебування: де я можу зупинитись?</h3>
 
         <p>
           Ви можете зупинитись у безкоштовному, міському пункті тимчасового розміщення біженців.
@@ -87,13 +79,9 @@
           Інформацію про наявні у місті місця тимчасового перебування для біженців можна отримати за телефоном: <b>0049 170 9061389</b>
         </p>
       </article>
+    </PageContent>
 
-
-      <div class="">
-        <!-- Quick Information -->
-        <h6>Quick Information</h6>
-      </div>
-    </div>
+    
   </div>
 </template>
 <script>
@@ -105,8 +93,29 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-
-    return { store }
+    const pageLinksDe = [
+                            {
+                              name: 'Kann ich nach Flensburg kommen?',
+                              id: 'flensburg',
+                            },
+                            {
+                              name: 'Wenn ich bereits in Flensburg bin?',
+                              id: 'bereitsInFlensburg',
+                            },
+                          ]
+    const pageLinksEn = [
+                            {
+                              name: 'Accommodation: where can I stay?',
+                              id: 'flensburg',
+                            },
+                          ]
+    const pageLinksUk = [
+                            {
+                              name: 'Місце тимчасового перебування: де я можу зупинитись?',
+                              id: 'flensburg',
+                            },
+                          ]
+    return { store, pageLinksDe, pageLinksEn, pageLinksUk}
   },
 })
 </script>
