@@ -1,0 +1,130 @@
+<template>
+  <div>
+    <div class="flex flex-row justify-between p-4">
+      <div class="text-center">
+        <button class="btn btn-sm btn-ghost bg-gray-300 text-black">
+          Zur Startseite
+        </button>
+      </div>
+      <div>
+        <h3 class="text-3xl font-semibold">Informationen für den Schulbesuch</h3>
+      </div>
+      <div>
+        <!--Icons-->
+        <h5>Icons hier</h5>
+      </div>
+    </div>
+
+    <LanguageTab></LanguageTab>
+
+    <div class="grid grid-cols-6 gap-2 py-8 px-2">
+      <div class="">
+        <!--Navigation-->
+        <h6>Navigation</h6>
+      </div>
+      <!-- Content Deutsch-->
+      <article
+        class="col-span-4 prose max-w-none"
+        v-if="store.language == 'deutsch'">
+
+        <h2>Wann muss mein Kind in die Schule?</h2>
+
+        <p>In Deutschland müssen Kinder von 6 - 16 Jahren in die Schule gehen. 
+            Aber auch danach können Kinder die Schule weiter besuchen.</p>
+        
+        <p><b>Grundschule</b> 
+            <br/>
+            Die Kinder beginnen mit 6 Jahren in der Grundschule. Diese ist verpflichtend. 
+            Die Kinder gehen in die Grundschule, bis sie 10 Jahre alt sind (1.-4. Klasse).</p>
+
+        <p>
+            <b>Weiterführende Schule</b>
+            <br/>
+            Die 5. Klasse beginnt auf einer weiterführenden Schule. Diese ist bis zur 9. Klasse verpflichtend.
+
+        </p>
+        <div>
+            <ul>
+                <li>
+                    Die 9. Klasse endet mit dem ESA (Erster allgemeinbildender Schulabschluss)
+                </li>
+                <li>
+                    Die 10. Klasse endet mit dem MSA (Mittlerer Schulabschluss)
+                </li>
+                <li>
+                    Die 13. Klasse endet mit dem Abitur.
+                </li>
+            </ul>
+        </div>
+
+        <h2>Mein Kind kann noch kein Deutsch – Kann es trotzdem die Schule besuchen?</h2>
+
+        <p>
+            In den meisten Schulen gibt es DaZ-Klassen (DaZ = Deutsch als Zweitsprache). Wenn Kinder wenig oder kein 
+            Deutsch sprechen, gehen sie zuerst nur in die DaZ-Klasse. Wenn die Kinder dann 
+            etwas Deutsch gelernt haben, besuchen sie immer mehr den regulären Unterricht.
+        </p>
+
+        <h2>Offener Ganztag und Hort</h2>
+
+        <p>
+            Offener Ganztag und Hort bedeutet, dass Kinder nach dem Unterricht in der Schule bleiben können. 
+            Dort werden sie betreut und können zum Beispiel: Mittag essen, Hilfe bei den Hausaufgaben 
+            bekommen, Sport oder Musik machen, malen und spielen. Dafür müssen Eltern ihre Kinder anmelden. 
+            Für Menschen mit wenig Geld, gibt es die Möglichkeit weniger zu bezahlen. Alle Flensburger 
+            Grundschulen haben einen offenen Ganztag. Ähnliche Angebote gibt es auch in den 
+            weiterführenden Schulen.
+        </p>
+
+        <h2>Hinweis zur Masernimpfung</h2>
+        <p>
+            Wenn Kinder in die Schule gehen, sollten sie gegen Masern geimpft sein. Für eine 
+            Betreuung in der KiTa (Kindertagesstätte) ist dies Pflicht. Auch für den offenen Ganztag 
+            und im Hort ist dies Pflicht. Eine Impfung ist bei einem Arzt möglich und schützt ihr 
+            eigenes Kind und andere Kinder.
+        </p>
+
+        <h2>Wie kann ich mein Kind in der Schule anmelden?</h2>
+        <p>
+            Eltern können aussuchen, welche Schule ihr Kind besuchen soll. Sie können z.B. zur 
+            Schule gehen, die bei Ihnen in der Nähe ist. Dort kann die Schulleitung Sie 
+            beraten. Sie besprechen, ob die Schule, die Richtige für Ihr Kind ist. Ansonsten kann 
+            die Schule einen anderen passenden Vorschlag machen.
+        </p>
+
+      
+        <h2>Welche Schulen gibt es in Flensburg?</h2>
+        <p>
+            In Flensburg gibt es mehrere Grundschulen und weiterführende Schulen.
+            Eine Liste aller Schulen gibt es unter:
+            <a href="https://www.flensburg.de/Leben-Soziales/Kinderbetreuung-Schulen/" target="_blank">
+                    https://www.flensburg.de/Leben-Soziales/Kinderbetreuung-Schulen/
+            </a>
+        </p>
+        
+
+      </article>
+      <div class="">
+        <!-- Quick Information -->
+        <h6>Quick Information</h6>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import LanguageTab from '~~/components/LanguageTab.vue'
+import { useLanguageStore } from '@/stores/language'
+import OnlineEmail from '~~/components/OnlineEmail.vue'
+import Terminvergabe from '~~/components/OnlineEmail.vue'
+definePageMeta({
+  layout: 'custom',
+})
+export default defineComponent({
+  setup() {
+    const store = useLanguageStore()
+
+    return { store }
+  },
+})
+</script>
+<style lang=""></style>
