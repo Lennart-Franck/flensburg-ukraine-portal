@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-auto sm:mx-0">
     <button @click="$router.push(to)" class="btn btn-outline btn-primary w-40">
       <slot />
     </button>

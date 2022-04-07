@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid grid-cols-2 gap-8 m-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 m-8">
       <BaseButton>Unterkunft anbieten</BaseButton>
       <BaseButton to="/refugees/medicine">Sachspenden</BaseButton>
       <BaseButton>Deutsche in der Ukraine</BaseButton>

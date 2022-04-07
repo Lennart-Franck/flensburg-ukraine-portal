@@ -10,6 +10,7 @@
               ? 'tab tab-bordered tab-active'
               : 'tab tab-bordered'
           "
+          class="tab-xs sm:tab"
         >
           Deutsch
         </a>
@@ -20,6 +21,7 @@
               ? 'tab tab-bordered tab-active'
               : 'tab tab-bordered'
           "
+          class="tab-xs sm:tab"
         >
           Englisch
         </a>
@@ -30,6 +32,7 @@
               ? 'tab tab-bordered tab-active'
               : 'tab tab-bordered'
           "
+          class="tab-xs sm:tab"
         >
           український
         </a>

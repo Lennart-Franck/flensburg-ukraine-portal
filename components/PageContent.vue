@@ -11,7 +11,7 @@
       </article>
       <div class="col-auto">
         <!-- Quick Information -->
-        <QuickInformation>
+        <QuickInformation :v-show="information">
           <slot name="information"></slot>
         </QuickInformation>
       </div>
@@ -20,7 +20,7 @@
 </template>
 <script>
 export default defineComponent({
-  props: ['pageLinks'],
+  props: ['pageLinks', 'information'],
 })
 </script>
 <style lang=""></style>

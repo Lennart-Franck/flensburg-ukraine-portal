@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="grid grid-cols-2 gap-8 m-8" v-if="store.language == 'deutsch'">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 content-center gap-8 m-8"
+      v-if="store.language == 'deutsch'"
+    >
       <BaseButton>Notunterkunft</BaseButton>
       <BaseButton to="/refugees/medicine">Medizinische Hilfe</BaseButton>
       <BaseButton>Leistung beantragen</BaseButton>
@@ -11,7 +14,10 @@
       <BaseButton>Spenden erhalten</BaseButton>
     </div>
 
-    <div class="grid grid-cols-2 gap-8 m-8" v-if="store.language == 'englisch'">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-8 m-8"
+      v-if="store.language == 'englisch'"
+    >
       <BaseButton>Emergency Accommondation</BaseButton>
       <BaseButton to="/refugees/medicine">Medical care</BaseButton>
       <BaseButton>Apply for Benefits</BaseButton>
@@ -23,7 +29,7 @@
     </div>
 
     <div
-      class="grid grid-cols-2 gap-8 m-8"
+      class="grid grid-cols-1 sm:grid-cols-2 gap-8 m-8"
       v-if="store.language == 'ukrainisch'"
     >
       <BaseButton>аварійний притулок</BaseButton>
