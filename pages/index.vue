@@ -42,10 +42,10 @@
       </div>
     </div>
 
-    <div class="block md:hidden">
+    <div class="flex flex-col items-center md:hidden">
       <div
         tabindex="0"
-        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-md mx-auto mt-4"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mx-2 max-w-md mt-4"
       >
         <input type="checkbox" class="peer" />
         <div class="collapse-title text-xl font-medium">
@@ -70,7 +70,7 @@
 
       <div
         tabindex="0"
-        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box max-w-md mx-auto mt-4"
+        class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mx-2 max-w-md mt-4"
       >
         <input type="checkbox" class="peer" />
         <div class="collapse-title text-xl font-medium">

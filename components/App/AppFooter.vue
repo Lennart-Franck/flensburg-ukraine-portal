@@ -1,5 +1,7 @@
 <template>
-  <footer class="footer bottom-0 items-center p-4 bg-white text-base-content">
+  <footer
+    class="footer bottom-0 items-center p-4 pt-4 bg-white text-base-content"
+  >
     <div class="items-center grid-flow-col">
       <p>Copyright © 2022 - All right reserved</p>
     </div>
