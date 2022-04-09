@@ -25,7 +25,20 @@
           Herzlichen Dank für Ihr Engagement!
         </p>
 
-        <h2 id="flensburgHilft">Flensburg hilft</h2>
+        <h2 id="helfen">Helfen</h2>
+        <p>
+          Wer ehrenamtlich helfen möchte, hat die Möglichkeit sich in das folgende Formular als Helfer:innen einzutragen: 
+          <br>
+          <br>
+          <a href="https://forms.gle/FyjJhpXZ1gCPFBWm7?fbclid=IwAR1nxHAe-kI4SJ-T7WHZ8q-yQMCMS-MUETK4p6IFa719vLDd3KdvuUlMKno" target="_blank">
+                Hilfsangebote aus Flensburg
+            </a>
+        </p>
+
+        <h2 id="flensburgHilft">Sachen spenden</h2>
+        <p>
+          Auf der folgenden Seite werden die Information für Sachspenden regelmäßig aktualisiert: 
+        </p>
         <b>
             <a href="https://flensburghilftderukraine.de/?fbclid=IwAR0k1B_2HFBbh-W7u9eshve_f2hj5kiwzyqGr2KfoT9YsVmhhu1G6XKW15Y" target="_blank">
                 Flensburg hilft der Ukraine
@@ -34,7 +47,7 @@
 
         <h2 id="news"> Newsletter der Stabstelle Integration</h2>
         <p>
-            Infos für Ukraine-Helfer:innen
+            Newsletter für Ukraine-Helfer:innen
             <br/>
             <a href="https://www.flensburg.de/Aktuelles/Ukraine-Portal/Infos-f%C3%BCr-Ukraine-Helfer-innen/" target="_blank">
             "Verweis einbauen"
@@ -120,7 +133,11 @@ export default defineComponent({
     store.changeLanguage("deutsch")
     const pageLinks = [
                             {
-                              name: 'Flensburg hilft',
+                              name: 'Helfen',
+                              id: 'helfen',
+                            },
+                            {
+                              name: 'Sachen spenden',
                               id: 'flensburgHilft',
                             },
                             {

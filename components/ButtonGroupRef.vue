@@ -7,7 +7,9 @@
       <BaseButton to="/refugees/shelter">Notunterkunft</BaseButton>
       <BaseButton to="/refugees/medicine">Medizinische Hilfe</BaseButton>
       <BaseButton to="/refugees/benefits">Leistung beantragen</BaseButton>
-      <BaseButton to="/refugees/aufenthalt">Aufenthalt in Flensburg</BaseButton>
+      <BaseButton to="/refugees/spendenDolmetscher">
+        Spenden erhalten
+      </BaseButton>
       <BaseButton to="/refugees/deutschLernen">Deutsch lernen</BaseButton>
       <BaseButton to="/refugees/pets">
         Heim- und Haustiere registrieren
@@ -15,9 +17,7 @@
       <BaseButton to="/refugees/migrationsberatung">
         Migrations beratung
       </BaseButton>
-      <BaseButton to="/refugees/spendenDolmetscher">
-        Spenden erhalten
-      </BaseButton>
+      
     </div>
 
     <div
@@ -27,15 +27,15 @@
       <BaseButton to="/refugees/shelter">Emergency Accommondation</BaseButton>
       <BaseButton to="/refugees/medicine">Medical care</BaseButton>
       <BaseButton to="/refugees/benefits">Apply for Benefits</BaseButton>
-      <BaseButton to="/refugees/aufenthalt">Stay in Flensburg</BaseButton>
+      <BaseButton to="/refugees/spendenDolmetscher">
+        Receive Donations
+      </BaseButton>
       <BaseButton to="/refugees/deutschLernen">Learning German</BaseButton>
       <BaseButton to="/refugees/pets">Register Pets</BaseButton>
       <BaseButton to="/refugees/migrationsberatung">
         Migration counseling
       </BaseButton>
-      <BaseButton to="/refugees/spendenDolmetscher">
-        Receive Donations
-      </BaseButton>
+      
     </div>
 
     <div
@@ -47,8 +47,8 @@
       <BaseButton to="/refugees/benefits">
         подати заявку на отримання пільг
       </BaseButton>
-      <BaseButton to="/refugees/aufenthalt">
-        Залишайтеся у Фленсбурзі
+      <BaseButton to="/refugees/spendenDolmetscher">
+        отримувати пожертви
       </BaseButton>
       <BaseButton to="/refugees/deutschLernen">вивчити німецьку</BaseButton>
       <BaseButton to="/refugees/pets">
@@ -57,9 +57,7 @@
       <BaseButton to="/refugees/migrationsberatung">
         Поради щодо міграції
       </BaseButton>
-      <BaseButton to="/refugees/spendenDolmetscher">
-        отримувати пожертви
-      </BaseButton>
+      
     </div>
   </div>
 </template>

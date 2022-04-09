@@ -12,7 +12,11 @@
       <BaseButton to="/volunteers/deutscheUkraine">
         Deutsche in der Ukraine
       </BaseButton>
-      <SecondaryButton>Weiter Informationen</SecondaryButton>
+      <BaseButton to="/volunteers/spenden">
+        Spenden
+      </BaseButton>
+      <BaseButton to="/volunteers/aufenthalt">Aufenthalt in Flensburg</BaseButton>
+      <SecondaryButton>Weitere Informationen</SecondaryButton>
     </div>
   </div>
 </template>
