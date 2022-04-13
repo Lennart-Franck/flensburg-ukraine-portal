@@ -5,9 +5,7 @@
     </PageHeader>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
-       <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'">
+
 
         <h2 id="sachSpenden">Sachen spenden</h2>
         <p>
@@ -49,7 +47,6 @@
                 Unterkunft regestrieren
         </a>
     
-      </article>
       <template v-slot:information>
         <p><b>KONTAKT</b></p>
         <p>

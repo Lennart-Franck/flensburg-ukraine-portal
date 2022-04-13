@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <AppHeader />
-    <div class="bg-gray-200 min-h-screen">
+  <div class="flex flex-col min-h-screen">
+    <header>
+      <AppHeader />
+    </header>
+    <div class="flex-grow">
       <slot />
     </div>
-
-    <AppFooter />
+    <div>
+      <AppFooter />
+    </div>
   </div>
 </template>
 <script>

@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="navbar bg-base-100 h-24">
+    <div class="navbar bg-gray-100 shadow-sm h-24">
       <div class="flex-1">
-        <a>
+        <nuxt-link to="/">
           <img
             src="~/assets/images/logo.png"
             alt="Logo"
             class="object-contain w-60 h-16"
           />
-        </a>
+        </nuxt-link>
       </div>
       <div class="flex-none mx-8 hidden md:flex">
         <HeaderIcons />
@@ -21,7 +21,7 @@
           <input
             type="text"
             placeholder="Wonach Suchen Sie?"
-            class="input input-ghost focus:outline-none -mr-8 bg-gray-100 placeholder:text-base-content"
+            class="input input-ghost focus:outline-none -mr-8 bg-gray-50 placeholder:text-base-content"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"

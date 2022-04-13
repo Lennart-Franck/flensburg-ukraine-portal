@@ -5,9 +5,6 @@
     </PageHeader>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
-       <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'">
 
         <p>
          Sie möchten Menschen, die aus der Ukraine nach Flensburg kommen, 
@@ -74,8 +71,6 @@
             Angehörige und möchten diese Angebote nicht wahrnehmen.
         </p>
 
-        
-      </article>
       <template v-slot:information>
         <p><b>KONTAKT</b></p>
         <p>

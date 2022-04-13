@@ -7,9 +7,7 @@
     <LanguageTab></LanguageTab>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
-      <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'">
+
 
         <p>
             In Flensburg gibt es vielfältige Angebote zur Sprachförderung, 
@@ -96,7 +94,7 @@
             Das Netzwerk trifft sich drei bis viermal im Jahr. 
         </p>
 
-      </article>
+
       <template v-slot:information>
         <p><b>Kontakt</b></p>
         <p>

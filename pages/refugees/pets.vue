@@ -7,9 +7,6 @@
     <LanguageTab></LanguageTab>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
-     <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'">
 
         <h2 id="registrieren">Registrieren Sie Ihr Heim-/Haustier!</h2>
         <p>
@@ -109,7 +106,6 @@
             von Heimtieren zu anderen als Handelszwecken und zur Aufhebung der Verordnung (EG) Nr. 998/2003 
             (ABl. L 178 vom 28.6.2013, S. 1) 
         </p>
-      </article>
 
       <template v-slot:information>
         <p><b>Veterinärdienste</b></p>

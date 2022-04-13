@@ -7,9 +7,6 @@
     <LanguageTab></LanguageTab>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
-      <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'">
 
         <h2 id="wannSchule">Wann muss mein Kind in die Schule?</h2>
 
@@ -85,7 +82,6 @@
                     https://www.flensburg.de/Leben-Soziales/Kinderbetreuung-Schulen/
             </a>
         </p>
-      </article>
 
       <template v-slot:information>
         <p>

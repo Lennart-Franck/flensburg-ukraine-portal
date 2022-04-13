@@ -1,7 +1,7 @@
 <template>
   <div class="sticky top-16 w-56">
     <div
-      class="prose outline rounded-md outline-gray-200 outline-1 prose-sm p-4"
+      class="prose outline rounded-md outline-gray-400 outline-1 prose-sm p-4"
     >
       <h4>Quick Information</h4>
       <slot />

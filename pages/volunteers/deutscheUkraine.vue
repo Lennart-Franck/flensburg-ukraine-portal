@@ -5,53 +5,61 @@
     </PageHeader>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
-       <article
-        class="col-span-4 prose max-w-none"
-        v-if="store.language == 'deutsch'">
+      <p id="deutsche">
+        Das Auswärtige Amt aktualisiert laufend seine Informationen zur
+        Situation in der Ukraine unter:
+        <a
+          href="https://www.auswaertiges-amt.de/de/service/UKR"
+          target="_blank"
+        >
+          https://www.auswaertiges-amt.de/de/service/UKR
+        </a>
+      </p>
 
-        <p id="deutsche">
-            Das Auswärtige Amt aktualisiert laufend seine Informationen zur Situation 
-            in der Ukraine unter:
-            <a href="https://www.auswaertiges-amt.de/de/service/UKR" target="_blank">
-                    https://www.auswaertiges-amt.de/de/service/UKR
+      <p>
+        Vor Reisen in die Ukraine wird gewarnt. Deutsche Staatsangehörige sind
+        dringend aufgefordert, das Land zu verlassen. In der Ukraine finden
+        schwere Kampfhandlungen und Raketenangriffe statt. Falls Sie das Land
+        nicht auf einem sicheren Weg verlassen können, bleiben Sie vorläufig an
+        einem geschützten Ort. Eine Evakuierung durch deutsche Behörden ist
+        derzeit nicht möglich. Das GK Donezk (in Dnipro) und die Botschaft Kiew
+        sind vorübergehend geschlossen.
+      </p>
+
+      <div>
+        <ul>
+          <li>
+            Sie erreichen die
+            <b>Krisenhotline</b>
+            des Auswärtigen Amts unter +49 (0) 30 5000 3000
+          </li>
+          <li>
+            Tragen Sie sich in die
+            <a
+              href="https://krisenvorsorgeliste.diplo.de/signin"
+              target="_blank"
+            >
+              Krisenvorsorgeliste
             </a>
-        </p>
+            des Auswärtigen Amts ein.
+          </li>
+          <li>
+            Verfolgen Sie die internationalen und lokalen Medien und achten Sie
+            auf lokale Bekanntmachungen.
+          </li>
+        </ul>
+      </div>
 
-        <p>
-            Vor Reisen in die Ukraine wird gewarnt. Deutsche Staatsangehörige sind 
-            dringend aufgefordert, das Land zu verlassen. In der Ukraine finden schwere 
-            Kampfhandlungen und Raketenangriffe statt. Falls Sie das Land nicht auf 
-            einem sicheren Weg verlassen können, bleiben Sie vorläufig an einem 
-            geschützten Ort. Eine Evakuierung durch deutsche Behörden ist derzeit nicht 
-            möglich.
-            Das GK Donezk (in Dnipro) und die Botschaft Kiew sind vorübergehend geschlossen.
-        </p>
+      <p>
+        Zusätzlich informiert das Auswärtige Amt über
+        <a
+          href="https://www.auswaertiges-amt.de/de/ReiseUndSicherheit/ukrainesicherheit/201946"
+          target="_blank"
+        >
+          Reise- und Sicherheitshinweise.
+        </a>
+      </p>
 
-        <div>
-            <ul>
-                <li>
-                    Sie erreichen die <b>Krisenhotline</b> des Auswärtigen Amts unter +49 (0) 30 5000 3000
-                </li>
-                <li>
-                    Tragen Sie sich in die
-                    <a href="https://krisenvorsorgeliste.diplo.de/signin" target="_blank">
-                    Krisenvorsorgeliste
-                    </a>
-                    des Auswärtigen Amts ein.  
-                </li>
-                <li>
-                    Verfolgen Sie die internationalen und lokalen Medien und achten Sie auf lokale Bekanntmachungen.
-                </li>
-            </ul>
-        </div>
-        
-        <p>
-            Zusätzlich informiert das Auswärtige Amt über
-            <a href="https://www.auswaertiges-amt.de/de/ReiseUndSicherheit/ukrainesicherheit/201946" target="_blank">
-            Reise- und Sicherheitshinweise.
-            </a>
-        </p>
-      </article>
       <template v-slot:information>
         <p>
           Ausländerrechtliche Angelegenheiten
@@ -71,11 +79,11 @@
 
         <p>
           Öffnungszeiten
-          <br/>
+          <br />
           Montag bis Freitag: 08:30 bis 12:00
-          <br/>
+          <br />
           Montag bis Mittwoch: 13:30 bis 15:30
-          <br/>
+          <br />
           Donnerstag: 14:00 bis 17:00
         </p>
       </template>
@@ -93,13 +101,13 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
-    store.changeLanguage("deutsch")
+    store.changeLanguage('deutsch')
     const pageLinks = [
-                            {
-                              name: 'Deutsche - Ausreise aus der Ukraine',
-                              id: 'deutsche',
-                            },
-                          ]
+      {
+        name: 'Deutsche - Ausreise aus der Ukraine',
+        id: 'deutsche',
+      },
+    ]
     return { store, pageLinks }
   },
 })

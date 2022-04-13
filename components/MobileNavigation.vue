@@ -1,11 +1,11 @@
 <template>
   <div
     tabindex="0"
-    class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box mx-1 max-w-sm mt-2"
+    class="collapse collapse-arrow rounded-md bg-gray-100 mx-1 h-14 max-w-none"
   >
     <input type="checkbox" class="peer" />
-    <div class="collapse-title font-medium">
-      <div class="text-lg text-left">Navigation</div>
+    <div class="collapse-title">
+      <div class="text-left">Navigation</div>
     </div>
     <div class="collapse-content">
       <nav class="">
