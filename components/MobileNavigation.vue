@@ -1,7 +1,7 @@
 <template>
   <div
     tabindex="0"
-    class="collapse collapse-arrow rounded-md bg-gray-100 mx-1 h-14 max-w-none"
+    class="collapse collapse-arrow rounded-md bg-gray-100 mx-1 max-w-none"
   >
     <input type="checkbox" class="peer" />
     <div class="collapse-title">
