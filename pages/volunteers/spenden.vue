@@ -7,9 +7,9 @@
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
 
 
-        <h2 id="sachSpenden">Sachen spenden</h2>
+        <h2 id="sachSpenden">Sachspenden</h2>
         <p>
-          Auf der folgenden wird der Bedarf an Sachspenden regemäßig aktualisierte und gebündelt. Zudem finden Sie dort Information über Spendenmöglichkeiten. 
+          Auf der folgenden Seite wird der Bedarf an Sachspenden regemäßig aktualisierte und gebündelt. Zudem finden Sie dort Informationen über Spendenmöglichkeiten. 
         </p>
         <b>
             <a href="https://flensburghilftderukraine.de/?fbclid=IwAR0k1B_2HFBbh-W7u9eshve_f2hj5kiwzyqGr2KfoT9YsVmhhu1G6XKW15Y" target="_blank">

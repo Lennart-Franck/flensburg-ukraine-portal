@@ -32,7 +32,7 @@
             </a>
         </p>
 
-        <h2 id="flensburgHilft">Sachen spenden</h2>
+        <h2 id="flensburgHilft">Sachspenden</h2>
         <p>
           Auf der folgenden Seite werden die Information für Sachspenden regelmäßig aktualisiert: 
         </p>
