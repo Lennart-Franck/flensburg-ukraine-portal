@@ -3,6 +3,12 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Weitere Informationen
     </PageHeader>
+    <PageHeader v-else-if="store.language == 'englisch'">
+      Further Information
+    </PageHeader>
+    <PageHeader v-else-if="store.language == 'ukrainisch'">
+      Додаткова інформація
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
@@ -84,6 +90,14 @@
         Fragen und Antworten zur Einreise aus der Ukraine und zum Aufenthalt in
         Deutschland
       </a>
+    </PageContent>
+    <PageContent v-if="store.language == 'englisch'">
+    <p>
+      Im Prototyp nicht vorhanden.
+    </p>
+    </PageContent>
+    <PageContent v-if="store.language == 'ukrainisch'">
+     Im Prototyp nicht vorhanden.
     </PageContent>
   </div>
 </template>

@@ -3,6 +3,12 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Kleidung, Dolmetscher... (kostenfrei)
     </PageHeader>
+    <PageHeader v-else-if="store.language == 'englisch'">
+      Clothing donations, translators...
+    </PageHeader>
+    <PageHeader v-else-if="store.language == 'ukrainisch'">
+      збору одягу, побутових речей тощо мовного посередництва шляхом залучення перекладачів
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
@@ -110,6 +116,14 @@
           </a>
         </p>
       </template>
+    </PageContent>
+    <PageContent v-if="store.language == 'englisch'">
+    <p>
+      Im Prototyp nicht vorhanden.
+    </p>
+    </PageContent>
+    <PageContent v-if="store.language == 'ukrainisch'">
+     Im Prototyp nicht vorhanden.
     </PageContent>
   </div>
 </template>

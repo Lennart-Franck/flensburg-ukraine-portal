@@ -3,6 +3,12 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Einreise mit Heim- und Haustieren (Ukraine)
     </PageHeader>
+    <PageHeader v-else-if="store.language == 'englisch'">
+      I have arrived in Germany with a pet
+    </PageHeader>
+    <PageHeader v-else-if="store.language == 'ukrainisch'">
+      Я привіз/-везла з собою домашніх тварин 
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
@@ -135,6 +141,14 @@
           </a>
         </p>
       </template>
+    </PageContent>
+    <PageContent v-if="store.language == 'englisch'">
+    <p>
+      Im Prototyp nicht vorhanden.
+    </p>
+    </PageContent>
+    <PageContent v-if="store.language == 'ukrainisch'">
+     Im Prototyp nicht vorhanden.
     </PageContent>
 
 

@@ -3,6 +3,12 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Deutsch lernen
     </PageHeader>
+    <PageHeader v-else-if="store.language == 'englisch'">
+      Learn German
+    </PageHeader>
+    <PageHeader v-else-if="store.language == 'ukrainisch'">
+      вивчити німецьку
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
@@ -139,6 +145,14 @@
           </a>
         </p>
       </template>
+    </PageContent>
+    <PageContent v-if="store.language == 'englisch'">
+    <p>
+      Im Prototyp nicht vorhanden.
+    </p>
+    </PageContent>
+    <PageContent v-if="store.language == 'ukrainisch'">
+     Im Prototyp nicht vorhanden.
     </PageContent>
   </div>
 </template>

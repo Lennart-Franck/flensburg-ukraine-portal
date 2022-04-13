@@ -16,7 +16,9 @@
         Spenden
       </BaseButton>
       <BaseButton to="/volunteers/aufenthalt">Aufenthalt in Flensburg</BaseButton>
-      <SecondaryButton>Weitere Informationen</SecondaryButton>
+      <SecondaryButton onclick="window.open('https://www.flensburg.de/', '_blank')">
+        zur Flensburg.de
+        </SecondaryButton>
     </div>
   </div>
 </template>

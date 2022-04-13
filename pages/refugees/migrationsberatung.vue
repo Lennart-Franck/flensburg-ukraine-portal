@@ -3,6 +3,13 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Migrationsberatung - Kontakte
     </PageHeader>
+    <PageHeader v-else-if="store.language == 'englisch'">
+      Migration counselling
+    </PageHeader>
+    <PageHeader v-else-if="store.language == 'ukrainisch'">
+      Консультації з міграції
+    </PageHeader>
+
     <LanguageTab></LanguageTab>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
@@ -198,6 +205,15 @@
         </table>
       </div>
     </PageContent>
+    <PageContent v-if="store.language == 'englisch'">
+    <p>
+      Im Prototyp nicht vorhanden.
+    </p>
+    </PageContent>
+    <PageContent v-if="store.language == 'ukrainisch'">
+     Im Prototyp nicht vorhanden.
+    </PageContent>
+    
   </div>
 </template>
 <script>

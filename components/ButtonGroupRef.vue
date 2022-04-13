@@ -17,7 +17,12 @@
       <BaseButton to="/refugees/migrationsberatung">
         Migrations beratung
       </BaseButton>
-      
+      <BaseButton to="/refugees/school">
+        Schule
+      </BaseButton>
+      <BaseButton to="/refugees/information">
+        Weitere Informationen
+      </BaseButton>
     </div>
 
     <div
@@ -35,7 +40,12 @@
       <BaseButton to="/refugees/migrationsberatung">
         Migration counseling
       </BaseButton>
-      
+      <BaseButton to="/refugees/school">
+        school
+      </BaseButton>
+      <BaseButton to="/refugees/information">
+        Further Information
+      </BaseButton>
     </div>
 
     <div
@@ -56,6 +66,12 @@
       </BaseButton>
       <BaseButton to="/refugees/migrationsberatung">
         Поради щодо міграції
+      </BaseButton>
+      <BaseButton to="/refugees/school">
+        школу
+      </BaseButton>
+      <BaseButton to="/refugees/information">
+        Додаткова інформація
       </BaseButton>
       
     </div>

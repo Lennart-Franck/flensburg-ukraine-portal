@@ -3,7 +3,6 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Ihr Aufenthalt in Flensburg
     </PageHeader>
-    <LanguageTab></LanguageTab>
 
     <PageContent :pageLinks="pageLinks" v-if="store.language == 'deutsch'">
       <p>Stand: 01.04.2022:</p>
@@ -149,6 +148,7 @@ definePageMeta({
 export default defineComponent({
   setup() {
     const store = useLanguageStore()
+    store.changeLanguage('deutsch')
     const pageLinks = [
       {
         name: 'Was gilt für aus der Ukraine Geflüchtete?*',

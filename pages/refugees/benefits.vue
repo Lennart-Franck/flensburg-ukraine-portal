@@ -3,6 +3,12 @@
     <PageHeader v-if="store.language == 'deutsch'">
       Leistungen beantragen
     </PageHeader>
+    <PageHeader v-else-if="store.language == 'englisch'">
+      Apply for Benefits
+    </PageHeader>
+    <PageHeader v-else-if="store.language == 'ukrainisch'">
+      Офіційна реєстрація Вашого перебування у Німеччині
+    </PageHeader>
 
     <LanguageTab></LanguageTab>
 
@@ -75,6 +81,15 @@
           Donnerstag: 14:00 bis 17:00
         </p>
       </template>
+    </PageContent>
+
+    <PageContent v-if="store.language == 'englisch'">
+    <p>
+      Im Prototyp nicht vorhanden.
+    </p>
+    </PageContent>
+    <PageContent v-if="store.language == 'ukrainisch'">
+     Im Prototyp nicht vorhanden.
     </PageContent>
   </div>
 </template>
