@@ -1,7 +1,7 @@
 <template>
   <div class="sticky top-16 mx-4 w-48">
     <div
-      class="outline rounded-md outline-gray-400 outline-1 prose prose-a:font-normal prose-sm p-4"
+      class="outline rounded-md outline-gray-400 outline-1 prose prose-a:font-normal prose-sm p-4 break-words"
     >
       <h4>Navigation</h4>
       <nav class="mt-4">
